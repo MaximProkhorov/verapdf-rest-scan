@@ -98,9 +98,6 @@ public final class Environments {
     }
     /** ISO Date pattern for ISO 8601 Date */
     static final String ISO8601_DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss"; //$NON-NLS-1$
-    /** {@link DateFormat} for ISO8601 date */
-    static DateFormat IOS8601_DATE_FORMATTER = new SimpleDateFormat(
-            ISO8601_DATE_PATTERN);
 
     private Environments() {
         throw new AssertionError("In Environments no-arg constructor."); //$NON-NLS-1$
@@ -255,6 +252,7 @@ public final class Environments {
      * @return the date as an ISO formatted string
      */
     public static final String toISO8601String(Date date) {
+        final DateFormat IOS8601_DATE_FORMATTER = new SimpleDateFormat(ISO8601_DATE_PATTERN);
         return IOS8601_DATE_FORMATTER.format(date);
     }
 

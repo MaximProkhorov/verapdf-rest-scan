@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.verapdf.rest.resources;
 
@@ -71,7 +71,7 @@ public class ValidateResource {
 	{
 		VeraGreenfieldFoundryProvider.initialise();
 	}
-	
+
 	@GET
 	@Path("/details")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
@@ -196,7 +196,7 @@ public class ValidateResource {
         if(!profileId.equals(AUTODETECT_PROFILE)) {
             PDFAFlavour flavour = PDFAFlavour.byFlavourId(profileId);
             try (PDFAParser toValidate = Foundries.defaultInstance().createParser(dis, flavour);
-                 PDFAValidator validator = ValidatorFactory.createValidator(flavour, false);) {
+                 PDFAValidator validator = ValidatorFactory.createValidator(flavour, false)) {
                 result = validator.validate(toValidate);
             } catch (ModelParsingException mpExcep) {
                 // If we have the same sha-1 then it's a PDF Box parse error, so
@@ -214,7 +214,7 @@ public class ValidateResource {
             }
         } else {
             try (PDFAParser parser = Foundries.defaultInstance().createParser(dis);
-                 PDFAValidator validator = Foundries.defaultInstance().createValidator(parser.getFlavour(), false);) {
+                 PDFAValidator validator = Foundries.defaultInstance().createValidator(parser.getFlavour(), false)) {
                 result = validator.validate(parser);
             } catch (ModelParsingException mpExcep) {
                 // If we have the same sha-1 then it's a PDF Box parse error, so

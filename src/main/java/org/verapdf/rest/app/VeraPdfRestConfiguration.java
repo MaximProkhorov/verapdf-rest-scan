@@ -4,7 +4,6 @@
 package org.verapdf.rest.app;
 
 import io.dropwizard.Configuration;
-import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,10 +19,6 @@ public class VeraPdfRestConfiguration extends Configuration {
     // FIXME: This isn't mapping to the port option from the config
     //
     private int port;
-
-
-    @JsonProperty("swagger")
-	public SwaggerBundleConfiguration swaggerBundleConfiguration;
 
     /**
      * @return the TCP/IP port used
