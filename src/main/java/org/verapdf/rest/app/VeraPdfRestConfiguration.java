@@ -7,6 +7,8 @@ import io.dropwizard.Configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
+
 /**
  * Configuration object for the Dropwizard app. Reads defaults from
  * configuration YAML file. This class has to be "mutable" due to Dropwizard
@@ -19,6 +21,9 @@ public class VeraPdfRestConfiguration extends Configuration {
     // FIXME: This isn't mapping to the port option from the config
     //
     private int port;
+
+    @JsonProperty("swagger")
+    public SwaggerBundleConfiguration swaggerBundleConfiguration;
 
     /**
      * @return the TCP/IP port used

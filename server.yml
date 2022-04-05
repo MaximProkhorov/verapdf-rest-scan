@@ -1,1 +1,2 @@
-server:
+swagger:
+  resourcePackage: org.verapdf
