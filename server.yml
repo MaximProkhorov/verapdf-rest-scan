@@ -1,2 +1,7 @@
-swagger:
-    resourcePackage: org.verapdf
+server:
+    applicationConnectors:
+        - type: http
+          port: 6000
+    adminConnectors:
+        - type: http
+          port: 6001
